@@ -1,28 +1,55 @@
 # Posix Command Line Interface
 
-- A simple, rewritten version of the CLI for Unix Systems.
+A simple Unix-style command line interface written in C.  
+Implements basic shell functionality using POSIX system calls for process creation, execution, and inter-process communication.
 
-## Commands:
+## Features
 
-- exit
-    - Args: None
-- cd
-    - Args: `cd <path>`
-- ls
-    - Args: `ls`
-- ps
-    - Args: None
-- kill
-    - Args: `kill <pid>`
-- clear:
-    - Args: None
+- Supports core shell commands (`cd`, `ls`, `clear`, `exit`)
+- Executes external binaries from the system PATH
+- Handles process creation and termination using `fork()`, `execvp()`, and `wait()`
+- Implements inter-process communication through Unix pipes (`|`)
+- Supports command chaining (e.g., `ls | grep txt | wc -l`)
+- Demonstrates low-level concepts in process management, IPC, and file descriptor redirection
 
-## 
+## Commands
 
-Started: 26/10/24
-<br/>
-Completed: 27/10/24
-<br/>
-Edited: 30/10/24
+- **exit**  
+  Exit the shell.  
+  Args: None
 
-Copyright (c) Mustafa Malik. See LICENSE for more.
+- **cd**  
+  Change the current working directory.  
+  Args: `cd <path>`
+
+- **ls**  
+  List directory contents.  
+  Args: `ls`
+
+- **clear**  
+  Clear the terminal screen.  
+  Args: None
+
+- **piping**  
+  Command chaining using the pipe operator (`|`).  
+  Example: `ls | grep .c | wc -l`
+
+## Technical Notes
+
+- Built from scratch with POSIX APIs: `fork()`, `execvp()`, `pipe()`, `dup2()`, and `wait()`
+- Uses file descriptors for inter-process communication
+- Demonstrates how a Unix shell handles process control, redirection, and IPC at the system call level
+- Serves as a minimal reference for understanding shell-level process orchestration
+- Understanding of userspace communication and how the kernel manages IPC related resources with process handling as well.
+
+## Project Timeline
+
+- **Started:** 26/10/24  
+- **Completed:** 03/11/25  
+- **Edited:** 03/11/25
+
+## Screenshots
+
+See the screenshots folder for demonstrations.
+
+`Copyright (c) Mustafa Malik. See LICENSE for more.`
