@@ -1,0 +1,10 @@
+the fork problem:
+
+when modifying a state or buffer from a forked process, it does not reflect on the parent process.
+yes this is pretty obvious when working with children processes
+
+proposal:
+introduce piping system, you send a message through a pipe to update a buffer on the parent process.
+
+problem:
+this means a majority of the "ls" command needs to be refactored.
