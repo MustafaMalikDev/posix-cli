@@ -40,7 +40,8 @@ Implements basic shell functionality using POSIX system calls for process creati
 - Uses file descriptors for inter-process communication
 - Demonstrates how a Unix shell handles process control, redirection, and IPC at the system call level
 - Serves as a minimal reference for understanding shell-level process orchestration
-- Understanding of userspace communication and how the kernel manages IPC related resources with process handling as well.
+- Understanding of userspace communication and how the kernel manages IPC related resources with process handling as well
+- Minimal string handling and edge cases are handled, the project goal was to implement process related features
 
 ## Project Timeline
 
